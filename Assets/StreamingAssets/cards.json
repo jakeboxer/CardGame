@@ -12,5 +12,12 @@
     "description": "Prevent 8 damage.",
     "energy_cost": 9,
     "sprite_filename": "shield1"
+  },
+  {
+    "id": 3,
+    "title": "Health Potion",
+    "description": "Gain 5 health.",
+    "energy_cost": 2,
+    "sprite_filename": "health_potion"
   }
 ]

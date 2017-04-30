@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: eb5fecd90c932b34bb5abf6dc670698f
-timeCreated: 1493277465
+timeCreated: 1493585929
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -67,7 +67,7 @@ TextureImporter:
     21300120: roguelikeitems_60
     21300122: roguelikeitems_61
     21300124: roguelikeitems_62
-    21300126: roguelikeitems_63
+    21300126: health_potion
     21300128: roguelikeitems_64
     21300130: roguelikeitems_65
     21300132: roguelikeitems_66
@@ -1083,7 +1083,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeitems_63
+      name: health_potion
       rect:
         serializedVersion: 2
         x: 176
