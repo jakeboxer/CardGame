@@ -32,8 +32,6 @@ public class CardModel {
     public string Title { get; set; }
 	public string Description { get; set; }
 	public int EnergyCost { get; set; }
-	public int Attack { get; set; }
-	public int Defense { get; set; }
 	public Sprite Sprite { get; set; }
 
     public CardModel() {
@@ -45,14 +43,6 @@ public class CardModel {
         Title = (string)data["title"];
 		Description = (string)data["description"];
 		EnergyCost = (int)data["energy_cost"];
-
-		if(data.Keys.Contains("attack")) {
-			Attack = (int)data["attack"];
-		}
-
-		if(data.Keys.Contains("defense")) {
-			Defense = (int)data["defense"];
-		}
 
 		string spriteFilename = (string)data["sprite_filename"];
 		Sprite[] itemSprites = Resources.LoadAll<Sprite>("Sprites/CardArt/roguelike_items");

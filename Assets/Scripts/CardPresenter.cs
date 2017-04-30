@@ -9,7 +9,6 @@ public class CardPresenter : MonoBehaviour {
 	
 	void Start () {
 		cardDatabase = GetComponent<CardDatabase>();
-		Debug.Log(cardDatabase.GetAllCardModels().Count);
 
 		foreach(CardModel cardModel in cardDatabase.GetAllCardModels()) {
 			GameObject cardGameObject = Instantiate(cardPrefab);

@@ -4,7 +4,6 @@
     "title": "Rusty Sword",
     "description": "Deal 3 damage.",
     "energy_cost": 1,
-    "attack": 3,
     "sprite_filename": "sword1"
   },
   {
@@ -12,7 +11,6 @@
     "title": "Wooden Shield",
     "description": "Prevent 8 damage.",
     "energy_cost": 9,
-    "defense": 8,
     "sprite_filename": "shield1"
   }
 ]
