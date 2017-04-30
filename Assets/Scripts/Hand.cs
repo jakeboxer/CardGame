@@ -23,7 +23,8 @@ public class Hand : MonoBehaviour, IDropHandler, ICardContainer {
 	}
 
 	public void CancelCardLeave (GameObject card, ICardContainer cancelingContainer) {
-
+		card.transform.SetParent(transform, false);
+		UpdateCardPositions();
 	}
 
 	public void OnDrop (PointerEventData eventData) {
@@ -31,9 +32,13 @@ public class Hand : MonoBehaviour, IDropHandler, ICardContainer {
 		CardDragger cardDragger = card.GetComponent<CardDragger>();
 
 		if (cardDragger.CurrentCardContainer == (ICardContainer)this) {
+			// If the player drags a card out of their hand and back into it (without dropping it in between), it means
+			// they decided not to play it, so allow them to drop it back into their hand.
 			card.transform.SetParent(transform, false);
 			UpdateCardPositions();
 		} else {
+			// If the player drags a card into their hand from somewhere else, cancel the drop, since we don't let
+			// players move cards back into their hand.
 			cardDragger.CurrentCardContainer.CancelCardLeave(card, this);
 		}
 	}

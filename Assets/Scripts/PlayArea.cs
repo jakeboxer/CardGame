@@ -8,12 +8,12 @@ public class PlayArea : MonoBehaviour, IDropHandler, ICardContainer {
 
 	public void OnDrop (PointerEventData eventData) {
 		GameObject card = eventData.pointerDrag;
+		CardDragger cardDragger = card.GetComponent<CardDragger>();
 
-		if (!cards.Contains(card)) {
+		if (cardDragger.CurrentCardContainer != (ICardContainer)this) {
 			cards.Add(card);
+			card.GetComponent<CardDragger>().CurrentCardContainer = this;
 		}
-
-		card.GetComponent<CardDragger>().CurrentCardContainer = this;
 
 		card.transform.SetParent(transform, false);
 		UpdateCardPositions();
