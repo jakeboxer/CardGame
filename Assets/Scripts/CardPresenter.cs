@@ -20,6 +20,7 @@ public class CardPresenter : MonoBehaviour {
 			cardTransform.FindChild("Description").GetComponent<Text>().text = cardModel.Description;
 			cardTransform.FindChild("Energy Container").FindChild("Text").GetComponent<Text>().text = cardModel.EnergyCost.ToString();
 			cardTransform.FindChild("Art").GetComponent<Image>().sprite = cardModel.Sprite;
+			cardTransform.position = new Vector2(cardModel.Id * 200 - 60, 800);
 		}
 	}
 }
