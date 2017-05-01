@@ -12,9 +12,13 @@ public class EnemyMetadata : MonoBehaviour {
 		}
 		set {
 			enemyModel = value;
-			transform.FindChild("Title").GetComponent<Text>().text = enemyModel.Title;
-			transform.FindChild("Drop Target").FindChild("Image").GetComponent<Image>().sprite = enemyModel.Sprite;
-			transform.FindChild("Health Amount").GetComponent<Text>().text = enemyModel.CurrentHealth.ToString();
+			UpdateDisplay();
 		}
+	}
+
+	public void UpdateDisplay () {
+		transform.FindChild("Title").GetComponent<Text>().text = EnemyModel.Title;
+		transform.FindChild("Drop Target").FindChild("Image").GetComponent<Image>().sprite = EnemyModel.Sprite;
+		transform.FindChild("Health Amount").GetComponent<Text>().text = EnemyModel.CurrentHealth.ToString();
 	}
 }

@@ -27,12 +27,18 @@ public class CardDatabase : MonoBehaviour {
 	}
 }
 
+public struct CardModelEffects {
+	public int damage;
+	public int heal;
+}
+
 public class CardModel {
     public int Id { get; set; }
     public string Title { get; set; }
 	public string Description { get; set; }
 	public int EnergyCost { get; set; }
 	public Sprite Sprite { get; set; }
+	public CardModelEffects effects;
 
     public CardModel() {
         Id = -1;
@@ -47,5 +53,13 @@ public class CardModel {
 		string spriteFilename = (string)data["sprite_filename"];
 		Sprite[] itemSprites = Resources.LoadAll<Sprite>("Sprites/CardArt/roguelike_items");
 		Sprite = itemSprites.Single(s => s.name == spriteFilename);
+
+		if (data["effects"].Keys.Contains("damage")) {
+			effects.damage = (int)data["effects"]["damage"];
+		}
+
+		if (data["effects"].Keys.Contains("heal")) {
+			effects.heal = (int)data["effects"]["heal"];
+		}
     }
 }

@@ -4,20 +4,27 @@
     "title": "Rusty Sword",
     "description": "Deal 3 damage.",
     "energy_cost": 1,
-    "sprite_filename": "sword1"
+    "sprite_filename": "sword1",
+    "effects": {
+      "damage": 3
+    }
   },
   {
     "id": 2,
     "title": "Wooden Shield",
     "description": "Prevent 8 damage.",
     "energy_cost": 9,
-    "sprite_filename": "shield1"
+    "sprite_filename": "shield1",
+    "effects": {}
   },
   {
     "id": 3,
     "title": "Health Potion",
     "description": "Gain 5 health.",
     "energy_cost": 2,
-    "sprite_filename": "health_potion"
+    "sprite_filename": "health_potion",
+    "effects": {
+      "heal": 5
+    }
   }
 ]
