@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CardDragger : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndDragHandler {
+public class CardDragger : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler {
 	private ICardContainer currentCardContainer;
 	public ICardContainer CurrentCardContainer {
 		get {
@@ -43,7 +43,7 @@ public class CardDragger : MonoBehaviour, IPointerDownHandler, IDragHandler, IEn
 		transform.position = eventData.position - mouseOffset;
 	}
 
-	public void OnEndDrag (PointerEventData eventData) {
+	public void OnPointerUp (PointerEventData eventData) {
 		GetComponent<CanvasGroup>().blocksRaycasts = true;
 		mouseOffset = Vector2.zero;
 	}
