@@ -10,13 +10,12 @@ public class EnemyDropTarget : MonoBehaviour, IDropHandler {
 		EnemyMetadata enemyMetadata = GetComponentInParent<EnemyMetadata>();
 
 		if (cardModel.effects.damage > 0) {
-			// Take damage
-			enemyMetadata.EnemyModel.CurrentHealth -= cardModel.effects.damage;
+			enemyMetadata.EnemyModel.TakeDamage(cardModel.effects.damage);
 		}
 
 		if (cardModel.effects.heal > 0) {
 			// Heal
-			enemyMetadata.EnemyModel.CurrentHealth += cardModel.effects.heal;
+			enemyMetadata.EnemyModel.Heal(cardModel.effects.heal);
 		}
 
 		enemyMetadata.UpdateDisplay();

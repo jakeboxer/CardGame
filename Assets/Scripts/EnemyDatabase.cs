@@ -38,4 +38,12 @@ public class EnemyModel {
 
 		CurrentHealth = startingHealth;
 	}
+
+	public void TakeDamage (int amount) {
+		CurrentHealth -= amount;
+	}
+
+	public void Heal (int amount) {
+		CurrentHealth = System.Math.Min(StartingHealth, CurrentHealth + amount);
+	}
 }
