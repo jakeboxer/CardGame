@@ -45,7 +45,7 @@ public class Hand : MonoBehaviour, IDropHandler, ICardContainer {
 
 	private void AddCard (CardModel cardModel) {
 		GameObject cardGameObject = Instantiate(cardPrefab);
-		cardGameObject.GetComponent<CardModelComponent>().CardModel = cardModel;
+		cardGameObject.GetComponent<CardMetadata>().CardModel = cardModel;
 		cardGameObject.GetComponent<CardDragger>().CurrentCardContainer = this;
 		cardGameObject.transform.SetParent(transform, false);
 		cards.Add(cardGameObject);

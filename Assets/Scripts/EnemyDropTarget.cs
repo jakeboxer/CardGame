@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class EnemyDropTarget : MonoBehaviour, IDropHandler {
 	public void OnDrop (PointerEventData eventData) {
 		GameObject cardGameObject = eventData.pointerDrag;
-		CardModel cardModel = cardGameObject.GetComponent<CardModelComponent>().CardModel;
+		CardModel cardModel = cardGameObject.GetComponent<CardMetadata>().CardModel;
 		EnemyMetadata enemyMetadata = GetComponentInParent<EnemyMetadata>();
 
 		if (cardModel.effects.damage > 0) {

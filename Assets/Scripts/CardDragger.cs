@@ -23,7 +23,7 @@ public class CardDragger : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 	private Vector2 mouseOffset = Vector2.zero;
 	private CardModel CardModel {
 		get {
-			return GetComponent<CardModelComponent>().CardModel;
+			return GetComponent<CardMetadata>().CardModel;
 		}
 	}
 

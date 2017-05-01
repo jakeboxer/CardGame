@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CardModelComponent : MonoBehaviour {
+public class CardMetadata : MonoBehaviour {
 	private CardModel cardModel;
 
 	public CardModel CardModel {
