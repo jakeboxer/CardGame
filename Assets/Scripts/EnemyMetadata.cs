@@ -17,8 +17,8 @@ public class EnemyMetadata : MonoBehaviour {
 	}
 
 	public void UpdateDisplay () {
-		transform.FindChild("Title").GetComponent<Text>().text = EnemyModel.Title;
-		transform.FindChild("Drop Target").FindChild("Image").GetComponent<Image>().sprite = EnemyModel.Sprite;
+		transform.Find("Title").GetComponent<Text>().text = EnemyModel.Title;
+		transform.Find("Drop Target").Find("Image").GetComponent<Image>().sprite = EnemyModel.Sprite;
 
 		string newHealth;
 
@@ -28,6 +28,6 @@ public class EnemyMetadata : MonoBehaviour {
 			newHealth = "Dead!";
 		}
 
-		transform.FindChild("Health Amount").GetComponent<Text>().text = newHealth;
+		transform.Find("Health Amount").GetComponent<Text>().text = newHealth;
 	}
 }

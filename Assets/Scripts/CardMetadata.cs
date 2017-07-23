@@ -12,10 +12,10 @@ public class CardMetadata : MonoBehaviour {
 		}
 		set {
 			cardModel = value;
-			transform.FindChild("Title").GetComponent<Text>().text = cardModel.Title;
-			transform.FindChild("Description").GetComponent<Text>().text = cardModel.Description;
-			transform.FindChild("Energy Container").FindChild("Text").GetComponent<Text>().text = cardModel.EnergyCost.ToString();
-			transform.FindChild("Art").GetComponent<Image>().sprite = cardModel.Sprite;
+			transform.Find("Title").GetComponent<Text>().text = cardModel.Title;
+			transform.Find("Description").GetComponent<Text>().text = cardModel.Description;
+			transform.Find("Energy Container").Find("Text").GetComponent<Text>().text = cardModel.EnergyCost.ToString();
+			transform.Find("Art").GetComponent<Image>().sprite = cardModel.Sprite;
 		}
 	}
 }
